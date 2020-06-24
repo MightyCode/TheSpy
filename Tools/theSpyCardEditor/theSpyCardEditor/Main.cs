@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace theSpyCardEditor
 {
     public enum EMode
     {
-        Standard, Description, Death, Fight
+        Standard, Description, Death, Fight, Equipment, Quest
     }
 
     public partial class Main : Form
@@ -39,7 +35,8 @@ namespace theSpyCardEditor
             buttonUpElement.Enabled = false;
             buttonDownElement.Enabled = false;
 
-            buttonsMode = new Button[] { buttonModeStandard, buttonModeDescription, buttonModeDeath, buttonModeFight };
+            buttonsMode = new Button[] { buttonModeStandard, buttonModeDescription, buttonModeDeath, buttonModeFight, 
+                buttonModeEquipment, buttonModeQuest};
 
             cardWriter = new CardWriter();
             cardReader = new CardReader();
@@ -201,7 +198,7 @@ namespace theSpyCardEditor
             }
         }
 
-        private void CardUp()
+        private void ElementUp()
         {
             if (listCard.SelectedIndex >= 1 && listCard.SelectedIndex < listCard.Items.Count)
             {
@@ -217,7 +214,7 @@ namespace theSpyCardEditor
             }
         }
 
-        private void CardDown()
+        private void ElementDown()
         {
             if(listCard.SelectedIndex >= 0 && listCard.SelectedIndex < listCard.Items.Count - 1)
             {
@@ -263,7 +260,7 @@ namespace theSpyCardEditor
         public void SaveCards(string path)
         {
             cardWriter.Open(path);
-            cardWriter.WriteHeader("1.1.0");
+            cardWriter.WriteHeader("1.2.0");
             cardWriter.WriteCards(allCards);
             cardWriter.WriteFooter();
             cardWriter.Close();
@@ -312,8 +309,17 @@ namespace theSpyCardEditor
             SwitchMode(EMode.Fight);
         }
 
+        private void buttonModeEquipment_Click(object sender, EventArgs e)
+        {
+            SwitchMode(EMode.Equipment);
+        }
 
-        private void buttonRemoveCard_Click(object sender, EventArgs e)
+        private void buttonModeQuest_Click(object sender, EventArgs e)
+        {
+            SwitchMode(EMode.Quest);
+        }
+
+        private void buttonRemoveElement_Click(object sender, EventArgs e)
         {
             RemoveSelectedCard();
         }
@@ -331,6 +337,8 @@ namespace theSpyCardEditor
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            if (CurrentCard == null) return;
+
             Card card = (Card)CurrentCard.Clone();
             Form modification = null;
 
@@ -402,12 +410,12 @@ namespace theSpyCardEditor
 
         private void buttonUp_Click(object sender, EventArgs e)
         {
-            CardUp();
+            ElementUp();
         }
 
         private void buttonDown_Click(object sender, EventArgs e)
         {
-            CardDown();
+            ElementDown();
         }
 
         #endregion
@@ -461,7 +469,7 @@ namespace theSpyCardEditor
 
             if (e.KeyCode == Keys.P)
             {
-                if (CurrentCard == null)
+                if (CurrentCard == null && listCard.Items.Count > 0)
                 {
                     listCard.Focus();
                     listCard.SelectedIndex = 0;
@@ -469,6 +477,7 @@ namespace theSpyCardEditor
                 else buttonEdit_Click(this, null);
             }
         }
+
         #endregion
     }
 }

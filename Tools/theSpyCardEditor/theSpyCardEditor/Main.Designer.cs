@@ -35,7 +35,7 @@
             this.buttonModeDescription = new System.Windows.Forms.Button();
             this.buttonModeDeath = new System.Windows.Forms.Button();
             this.buttonModeFight = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonVisualisation = new System.Windows.Forms.Button();
             this.buttonNewCard = new System.Windows.Forms.Button();
             this.buttonRemoveElement = new System.Windows.Forms.Button();
             this.labelIdDes = new System.Windows.Forms.Label();
@@ -59,6 +59,10 @@
             this.buttonLauchGame = new System.Windows.Forms.Button();
             this.buttonUpElement = new System.Windows.Forms.Button();
             this.buttonDownElement = new System.Windows.Forms.Button();
+            this.buttonModeEquipment = new System.Windows.Forms.Button();
+            this.buttonModeQuest = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBoxDescription.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +70,7 @@
             // listCard
             // 
             this.listCard.FormattingEnabled = true;
-            this.listCard.Location = new System.Drawing.Point(12, 148);
+            this.listCard.Location = new System.Drawing.Point(12, 178);
             this.listCard.Name = "listCard";
             this.listCard.Size = new System.Drawing.Size(303, 342);
             this.listCard.TabIndex = 6;
@@ -75,11 +79,11 @@
             // labelList
             // 
             this.labelList.AutoSize = true;
-            this.labelList.Location = new System.Drawing.Point(136, 132);
+            this.labelList.Location = new System.Drawing.Point(136, 162);
             this.labelList.Name = "labelList";
-            this.labelList.Size = new System.Drawing.Size(37, 13);
+            this.labelList.Size = new System.Drawing.Size(50, 13);
             this.labelList.TabIndex = 2;
-            this.labelList.Text = "Cartes";
+            this.labelList.Text = "Éléments";
             // 
             // label1
             // 
@@ -130,18 +134,18 @@
             this.buttonModeFight.UseVisualStyleBackColor = true;
             this.buttonModeFight.Click += new System.EventHandler(this.buttonModeFight_Click);
             // 
-            // button5
+            // buttonVisualisation
             // 
-            this.button5.Location = new System.Drawing.Point(85, 49);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Charger la visualisation";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonVisualisation.Location = new System.Drawing.Point(85, 49);
+            this.buttonVisualisation.Name = "buttonVisualisation";
+            this.buttonVisualisation.Size = new System.Drawing.Size(160, 23);
+            this.buttonVisualisation.TabIndex = 1;
+            this.buttonVisualisation.Text = "Charger la visualisation";
+            this.buttonVisualisation.UseVisualStyleBackColor = true;
             // 
             // buttonNewCard
             // 
-            this.buttonNewCard.Location = new System.Drawing.Point(12, 505);
+            this.buttonNewCard.Location = new System.Drawing.Point(12, 535);
             this.buttonNewCard.Name = "buttonNewCard";
             this.buttonNewCard.Size = new System.Drawing.Size(94, 23);
             this.buttonNewCard.TabIndex = 8;
@@ -149,15 +153,15 @@
             this.buttonNewCard.UseVisualStyleBackColor = true;
             this.buttonNewCard.Click += new System.EventHandler(this.buttonNewCard_Click);
             // 
-            // buttonRemoveCard
+            // buttonRemoveElement
             // 
-            this.buttonRemoveElement.Location = new System.Drawing.Point(221, 505);
-            this.buttonRemoveElement.Name = "buttonRemoveCard";
+            this.buttonRemoveElement.Location = new System.Drawing.Point(221, 535);
+            this.buttonRemoveElement.Name = "buttonRemoveElement";
             this.buttonRemoveElement.Size = new System.Drawing.Size(94, 23);
             this.buttonRemoveElement.TabIndex = 9;
             this.buttonRemoveElement.Text = "Retirer carte";
             this.buttonRemoveElement.UseVisualStyleBackColor = true;
-            this.buttonRemoveElement.Click += new System.EventHandler(this.buttonRemoveCard_Click);
+            this.buttonRemoveElement.Click += new System.EventHandler(this.buttonRemoveElement_Click);
             // 
             // labelIdDes
             // 
@@ -180,7 +184,7 @@
             this.groupBoxDescription.Controls.Add(this.labelHeaderDes);
             this.groupBoxDescription.Controls.Add(this.labelId);
             this.groupBoxDescription.Controls.Add(this.labelIdDes);
-            this.groupBoxDescription.Location = new System.Drawing.Point(334, 163);
+            this.groupBoxDescription.Location = new System.Drawing.Point(334, 193);
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.Size = new System.Drawing.Size(469, 327);
             this.groupBoxDescription.TabIndex = 13;
@@ -324,38 +328,80 @@
             this.buttonLauchGame.UseVisualStyleBackColor = true;
             this.buttonLauchGame.Click += new System.EventHandler(this.buttonLauchGame_Click);
             // 
-            // buttonUp
+            // buttonUpElement
             // 
-            this.buttonUpElement.Location = new System.Drawing.Point(127, 505);
-            this.buttonUpElement.Name = "buttonUp";
+            this.buttonUpElement.Location = new System.Drawing.Point(127, 535);
+            this.buttonUpElement.Name = "buttonUpElement";
             this.buttonUpElement.Size = new System.Drawing.Size(28, 23);
             this.buttonUpElement.TabIndex = 16;
             this.buttonUpElement.Text = "↑";
             this.buttonUpElement.UseVisualStyleBackColor = true;
             this.buttonUpElement.Click += new System.EventHandler(this.buttonUp_Click);
             // 
-            // buttonDown
+            // buttonDownElement
             // 
-            this.buttonDownElement.Location = new System.Drawing.Point(161, 505);
-            this.buttonDownElement.Name = "buttonDown";
+            this.buttonDownElement.Location = new System.Drawing.Point(161, 535);
+            this.buttonDownElement.Name = "buttonDownElement";
             this.buttonDownElement.Size = new System.Drawing.Size(28, 23);
             this.buttonDownElement.TabIndex = 17;
             this.buttonDownElement.Text = "↓";
             this.buttonDownElement.UseVisualStyleBackColor = true;
             this.buttonDownElement.Click += new System.EventHandler(this.buttonDown_Click);
             // 
+            // buttonModeEquipement
+            // 
+            this.buttonModeEquipment.Location = new System.Drawing.Point(334, 122);
+            this.buttonModeEquipment.Name = "buttonModeEquipement";
+            this.buttonModeEquipment.Size = new System.Drawing.Size(94, 23);
+            this.buttonModeEquipment.TabIndex = 18;
+            this.buttonModeEquipment.Text = "Équipements";
+            this.buttonModeEquipment.UseVisualStyleBackColor = true;
+            this.buttonModeEquipment.Click += new System.EventHandler(this.buttonModeEquipment_Click);
+            // 
+            // buttonModeQuest
+            // 
+            this.buttonModeQuest.Location = new System.Drawing.Point(434, 122);
+            this.buttonModeQuest.Name = "buttonModeQuest";
+            this.buttonModeQuest.Size = new System.Drawing.Size(94, 23);
+            this.buttonModeQuest.TabIndex = 19;
+            this.buttonModeQuest.Text = "Quêtes";
+            this.buttonModeQuest.UseVisualStyleBackColor = true;
+            this.buttonModeQuest.Click += new System.EventHandler(this.buttonModeQuest_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(534, 122);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "/";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(634, 122);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "/";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 559);
+            this.ClientSize = new System.Drawing.Size(843, 573);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonModeQuest);
+            this.Controls.Add(this.buttonModeEquipment);
             this.Controls.Add(this.buttonDownElement);
             this.Controls.Add(this.buttonUpElement);
             this.Controls.Add(this.buttonLauchGame);
             this.Controls.Add(this.groupBoxDescription);
             this.Controls.Add(this.buttonRemoveElement);
             this.Controls.Add(this.buttonNewCard);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonVisualisation);
             this.Controls.Add(this.buttonModeFight);
             this.Controls.Add(this.buttonModeDeath);
             this.Controls.Add(this.buttonModeDescription);
@@ -391,7 +437,7 @@
         private System.Windows.Forms.Button buttonModeDescription;
         private System.Windows.Forms.Button buttonModeDeath;
         private System.Windows.Forms.Button buttonModeFight;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonVisualisation;
         private System.Windows.Forms.Button buttonNewCard;
         private System.Windows.Forms.Button buttonRemoveElement;
         private System.Windows.Forms.Label labelIdDes;
@@ -415,6 +461,10 @@
         private System.Windows.Forms.RichTextBox textBox;
         private System.Windows.Forms.Button buttonUpElement;
         private System.Windows.Forms.Button buttonDownElement;
+        private System.Windows.Forms.Button buttonModeEquipment;
+        private System.Windows.Forms.Button buttonModeQuest;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

@@ -1,4 +1,4 @@
-version:1.1.0
+version:1.2.0
 Standard 2
 "Id","Header","Background","Text","TextLeft","TextRight","EffectLeft","EffectRight","BackTextLeft","BackTextRight","ConditionsLeft","ConditionsRight","NecessaryConditions","Weight"
 "intro1","fr{Conseillère du gouvernement de Ternia};en{Ternia gouvernement advisor}","card-ternia-gouvernment-advisor","fr{Bonjour, êtes vous le \"Pionnier\" ? Celui qui va infiltrer Eter ?};en{}","fr{Euh, je crois que vous vous êtes trompé de personne...};en{}","fr{Oui, c'est bien moi. };en{}","go card intro2;","go description intro3;","fr{};en{}","fr{};en{}","","","globalIntro == 0","inf"
@@ -21,4 +21,6 @@ Death 1
 "Id","Header","Background","Text"
 "wrongSpy","fr{Oups, mauvaise personne !};en{}","death-jail","fr{Vous êtes enfermé à vie pour avoir entendu des informations confidentielles . . .};en{}"
 Fight 0
+Equipment 0
+Quest 0
 end
