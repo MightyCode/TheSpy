@@ -50,6 +50,8 @@
             this.buttonOpenInventory = new System.Windows.Forms.Button();
             this.buttonOpenQuests = new System.Windows.Forms.Button();
             this.buttonOpenDeath = new System.Windows.Forms.Button();
+            this.labelNewQuests = new System.Windows.Forms.Label();
+            this.labelNewDeath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -266,7 +268,7 @@
             // 
             // buttonOpenDeath
             // 
-            this.buttonOpenDeath.Location = new System.Drawing.Point(713, 191);
+            this.buttonOpenDeath.Location = new System.Drawing.Point(713, 218);
             this.buttonOpenDeath.Name = "buttonOpenDeath";
             this.buttonOpenDeath.Size = new System.Drawing.Size(105, 57);
             this.buttonOpenDeath.TabIndex = 24;
@@ -274,12 +276,36 @@
             this.buttonOpenDeath.UseVisualStyleBackColor = true;
             this.buttonOpenDeath.Click += new System.EventHandler(this.buttonOpenDeath_Click);
             // 
+            // labelNewQuests
+            // 
+            this.labelNewQuests.AutoSize = true;
+            this.labelNewQuests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNewQuests.Location = new System.Drawing.Point(710, 188);
+            this.labelNewQuests.Name = "labelNewQuests";
+            this.labelNewQuests.Size = new System.Drawing.Size(123, 13);
+            this.labelNewQuests.TabIndex = 25;
+            this.labelNewQuests.Text = "Fin de quêtes débloqués";
+            this.labelNewQuests.Visible = false;
+            // 
+            // labelNewDeath
+            // 
+            this.labelNewDeath.AutoSize = true;
+            this.labelNewDeath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNewDeath.Location = new System.Drawing.Point(726, 278);
+            this.labelNewDeath.Name = "labelNewDeath";
+            this.labelNewDeath.Size = new System.Drawing.Size(82, 13);
+            this.labelNewDeath.TabIndex = 26;
+            this.labelNewDeath.Text = "Nouvelles morts";
+            this.labelNewDeath.Visible = false;
+            // 
             // GameSimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
             this.ClientSize = new System.Drawing.Size(865, 636);
+            this.Controls.Add(this.labelNewDeath);
+            this.Controls.Add(this.labelNewQuests);
             this.Controls.Add(this.buttonOpenDeath);
             this.Controls.Add(this.buttonOpenQuests);
             this.Controls.Add(this.buttonOpenInventory);
@@ -336,5 +362,7 @@
         private System.Windows.Forms.Button buttonOpenInventory;
         private System.Windows.Forms.Button buttonOpenQuests;
         private System.Windows.Forms.Button buttonOpenDeath;
+        private System.Windows.Forms.Label labelNewQuests;
+        private System.Windows.Forms.Label labelNewDeath;
     }
 }

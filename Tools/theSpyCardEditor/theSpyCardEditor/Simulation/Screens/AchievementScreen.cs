@@ -19,8 +19,8 @@ namespace theSpyCardEditor
             this.achievements = new List<Card>();
             this.isDeath = isDeath;
 
-            SetDisplay(isDeath);
             groupBoxDescription.Visible = false;
+            SetDisplay(isDeath);
 
             foreach (KeyValuePair<Card, bool> value in achievements)
             {
@@ -42,12 +42,10 @@ namespace theSpyCardEditor
             {
                 labelTitle.Text = "Morts obtenus";
                 labelHeaderDes.Text = "Mort : ";
-                pictureBoxQuest.Visible = false;
             } else
             {
-                labelTitle.Text = "Quêtes finis";
+                labelTitle.Text = "Quêtes terminées";
                 labelHeaderDes.Text = "Quête : ";
-                pictureBoxDeath.Visible = false;
             }
         }
 
@@ -89,14 +87,21 @@ namespace theSpyCardEditor
 
         private void LoadCardImage(string name)
         {
+            pictureBoxQuest.Visible = false;
+            pictureBoxDeath.Visible = false;
             string path = ImageExtension.GetPathWithoutExtension(Utils.RESOURCES_PATH + name);
-
-            if (File.Exists(path)) return;
+            if (!File.Exists(path)) return;
 
             if (isDeath)
+            {
+                pictureBoxDeath.Visible = true;
                 pictureBoxDeath.Image = Image.FromFile(path);
+            }
             else
+            {
+                pictureBoxQuest.Visible = true;
                 pictureBoxQuest.Image = Image.FromFile(path);
+            }
         }
     }
 }

@@ -48,7 +48,6 @@ namespace theSpyCardEditor
                 questObtained.Add(quest, false);
             }
 
-
             SS = new SimulationSystem(cards, parameters);
             GSS = new GameSimulationState(parameters, SS);
 
@@ -142,7 +141,12 @@ namespace theSpyCardEditor
                 case EMode.Death:
                     buttonLeft.Text = "Suite";
                     buttonRight.Text = "Suite";
-                    deathObtained[currentCard] = true;
+                    if (!deathObtained[currentCard])
+                    {
+                        deathObtained[currentCard] = true;
+                        labelNewDeath.Visible = true;
+                    }
+                    
                     break;
                 case EMode.Fight:
 
@@ -223,7 +227,6 @@ namespace theSpyCardEditor
                     propertyEffect = "Effect";
                     break;
                 case EMode.Death:
-
                     DeathReset();
                     break;
                 case EMode.Fight:
@@ -361,11 +364,13 @@ namespace theSpyCardEditor
         private void buttonOpenQuests_Click(object sender, EventArgs e)
         {
             new AchievementScreen(questObtained, false).ShowDialog();
+            labelNewQuests.Visible = false;
         }
 
         private void buttonOpenDeath_Click(object sender, EventArgs e)
         {
             new AchievementScreen(deathObtained, true).ShowDialog();
+            labelNewDeath.Visible = false;
         }
 
         #endregion
@@ -378,6 +383,7 @@ namespace theSpyCardEditor
                     Console.WriteLine("FOUND");
                     if (!questObtained[card]){
                         questObtained[card] = true;
+                        labelNewQuests.Visible = true;
                     }
                     break;
                 }

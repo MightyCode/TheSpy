@@ -90,17 +90,19 @@
             // 
             // pictureBoxQuest
             // 
-            this.pictureBoxQuest.Location = new System.Drawing.Point(163, 192);
+            this.pictureBoxQuest.Location = new System.Drawing.Point(23, 170);
             this.pictureBoxQuest.Name = "pictureBoxQuest";
             this.pictureBoxQuest.Size = new System.Drawing.Size(64, 64);
+            this.pictureBoxQuest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxQuest.TabIndex = 20;
             this.pictureBoxQuest.TabStop = false;
             // 
             // pictureBoxDeath
             // 
-            this.pictureBoxDeath.Location = new System.Drawing.Point(130, 192);
+            this.pictureBoxDeath.Location = new System.Drawing.Point(23, 170);
             this.pictureBoxDeath.Name = "pictureBoxDeath";
             this.pictureBoxDeath.Size = new System.Drawing.Size(130, 130);
+            this.pictureBoxDeath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDeath.TabIndex = 19;
             this.pictureBoxDeath.TabStop = false;
             // 
@@ -130,7 +132,7 @@
             // 
             this.labelHeader.AutoSize = true;
             this.labelHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelHeader.Location = new System.Drawing.Point(160, 30);
+            this.labelHeader.Location = new System.Drawing.Point(69, 30);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(47, 13);
             this.labelHeader.TabIndex = 17;
