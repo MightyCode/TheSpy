@@ -22,8 +22,7 @@ Death 1
 "wrongSpy","fr{Oups, mauvaise personne !};en{}","death-jail","fr{Vous êtes enfermé à vie pour avoir entendu des informations confidentielles . . .};en{}"
 Fight 0
 Equipment 0
-Quest 2
+Quest 1
 "Id","Header","Background","Text"
-"intro7","fr{Intro - Les présentations};en{}","interrogation-point","fr{(^-^)};en{}"
-"intro10","fr{Intro - Le premier combat};en{}","rune-attack","fr{Vous avez effectué votre 1er combat ! };en{}"
+"intro11","fr{Introduction};en{}","","fr{Vous êtes devenu le premier espion d'une longue série ...};en{}"
 end
