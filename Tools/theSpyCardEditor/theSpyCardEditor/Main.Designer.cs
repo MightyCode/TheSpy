@@ -37,7 +37,7 @@
             this.buttonModeFight = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonNewCard = new System.Windows.Forms.Button();
-            this.buttonRemoveCard = new System.Windows.Forms.Button();
+            this.buttonRemoveElement = new System.Windows.Forms.Button();
             this.labelIdDes = new System.Windows.Forms.Label();
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
             this.textBox = new System.Windows.Forms.RichTextBox();
@@ -57,8 +57,8 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.buttonLauchGame = new System.Windows.Forms.Button();
-            this.buttonUp = new System.Windows.Forms.Button();
-            this.buttonDown = new System.Windows.Forms.Button();
+            this.buttonUpElement = new System.Windows.Forms.Button();
+            this.buttonDownElement = new System.Windows.Forms.Button();
             this.groupBoxDescription.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,13 +151,13 @@
             // 
             // buttonRemoveCard
             // 
-            this.buttonRemoveCard.Location = new System.Drawing.Point(221, 505);
-            this.buttonRemoveCard.Name = "buttonRemoveCard";
-            this.buttonRemoveCard.Size = new System.Drawing.Size(94, 23);
-            this.buttonRemoveCard.TabIndex = 9;
-            this.buttonRemoveCard.Text = "Retirer carte";
-            this.buttonRemoveCard.UseVisualStyleBackColor = true;
-            this.buttonRemoveCard.Click += new System.EventHandler(this.buttonRemoveCard_Click);
+            this.buttonRemoveElement.Location = new System.Drawing.Point(221, 505);
+            this.buttonRemoveElement.Name = "buttonRemoveCard";
+            this.buttonRemoveElement.Size = new System.Drawing.Size(94, 23);
+            this.buttonRemoveElement.TabIndex = 9;
+            this.buttonRemoveElement.Text = "Retirer carte";
+            this.buttonRemoveElement.UseVisualStyleBackColor = true;
+            this.buttonRemoveElement.Click += new System.EventHandler(this.buttonRemoveCard_Click);
             // 
             // labelIdDes
             // 
@@ -326,34 +326,34 @@
             // 
             // buttonUp
             // 
-            this.buttonUp.Location = new System.Drawing.Point(127, 505);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(28, 23);
-            this.buttonUp.TabIndex = 16;
-            this.buttonUp.Text = "↑";
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            this.buttonUpElement.Location = new System.Drawing.Point(127, 505);
+            this.buttonUpElement.Name = "buttonUp";
+            this.buttonUpElement.Size = new System.Drawing.Size(28, 23);
+            this.buttonUpElement.TabIndex = 16;
+            this.buttonUpElement.Text = "↑";
+            this.buttonUpElement.UseVisualStyleBackColor = true;
+            this.buttonUpElement.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // buttonDown
             // 
-            this.buttonDown.Location = new System.Drawing.Point(161, 505);
-            this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(28, 23);
-            this.buttonDown.TabIndex = 17;
-            this.buttonDown.Text = "↓";
-            this.buttonDown.UseVisualStyleBackColor = true;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            this.buttonDownElement.Location = new System.Drawing.Point(161, 505);
+            this.buttonDownElement.Name = "buttonDown";
+            this.buttonDownElement.Size = new System.Drawing.Size(28, 23);
+            this.buttonDownElement.TabIndex = 17;
+            this.buttonDownElement.Text = "↓";
+            this.buttonDownElement.UseVisualStyleBackColor = true;
+            this.buttonDownElement.Click += new System.EventHandler(this.buttonDown_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 559);
-            this.Controls.Add(this.buttonDown);
-            this.Controls.Add(this.buttonUp);
+            this.Controls.Add(this.buttonDownElement);
+            this.Controls.Add(this.buttonUpElement);
             this.Controls.Add(this.buttonLauchGame);
             this.Controls.Add(this.groupBoxDescription);
-            this.Controls.Add(this.buttonRemoveCard);
+            this.Controls.Add(this.buttonRemoveElement);
             this.Controls.Add(this.buttonNewCard);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.buttonModeFight);
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Button buttonModeFight;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonNewCard;
-        private System.Windows.Forms.Button buttonRemoveCard;
+        private System.Windows.Forms.Button buttonRemoveElement;
         private System.Windows.Forms.Label labelIdDes;
         private System.Windows.Forms.GroupBox groupBoxDescription;
         private System.Windows.Forms.Label labelId;
@@ -413,8 +413,8 @@
         private System.Windows.Forms.Button buttonLauchGame;
         private System.Windows.Forms.ToolStripMenuItem nouveauToolStripMenuItem;
         private System.Windows.Forms.RichTextBox textBox;
-        private System.Windows.Forms.Button buttonUp;
-        private System.Windows.Forms.Button buttonDown;
+        private System.Windows.Forms.Button buttonUpElement;
+        private System.Windows.Forms.Button buttonDownElement;
     }
 }
 

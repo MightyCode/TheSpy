@@ -35,7 +35,9 @@ namespace theSpyCardEditor
 
             Construct();
 
-            buttonRemoveCard.Enabled = false;
+            buttonRemoveElement.Enabled = false;
+            buttonUpElement.Enabled = false;
+            buttonDownElement.Enabled = false;
 
             buttonsMode = new Button[] { buttonModeStandard, buttonModeDescription, buttonModeDeath, buttonModeFight };
 
@@ -153,7 +155,10 @@ namespace theSpyCardEditor
         {
             if (listCard.SelectedIndex >= 0 && listCard.SelectedIndex < allCards[currentMode].Count)
             {
-                buttonRemoveCard.Enabled = true;
+                buttonRemoveElement.Enabled = true;
+                buttonUpElement.Enabled = true;
+                buttonDownElement.Enabled = true;
+
                 groupBoxDescription.Visible = true;
                 groupBoxDescription.Enabled = true;
 
@@ -188,7 +193,12 @@ namespace theSpyCardEditor
 
             if (selected >= 1) listCard.SelectedIndex = selected - 1;
             else if (selected == 0 & listCard.Items.Count >= 1) listCard.SelectedIndex = selected;
-            else buttonRemoveCard.Enabled = false;
+            else
+            {
+                buttonRemoveElement.Enabled = false;
+                buttonUpElement.Enabled = false;
+                buttonDownElement.Enabled = false;
+            }
         }
 
         private void CardUp()

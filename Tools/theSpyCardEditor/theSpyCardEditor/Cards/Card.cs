@@ -62,7 +62,6 @@ namespace theSpyCardEditor
                     Properties.Add("ConditionsWin", new CardField(false));
                     break;
             }
-
         }
 
         public bool IdEquals(string otherId)
