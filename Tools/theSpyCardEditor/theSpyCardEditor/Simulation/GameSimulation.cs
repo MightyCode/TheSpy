@@ -337,6 +337,22 @@ namespace theSpyCardEditor
         {
             GSS.Show();
         }
+
+        private void buttonOpenInventory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonOpenQuests_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonOpenDeath_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         private void PrintLabel()

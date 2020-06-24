@@ -47,6 +47,9 @@
             this.labelCoverValue = new System.Windows.Forms.Label();
             this.labelWorshipValue = new System.Windows.Forms.Label();
             this.textBoxText = new System.Windows.Forms.RichTextBox();
+            this.buttonOpenInventory = new System.Windows.Forms.Button();
+            this.buttonOpenQuests = new System.Windows.Forms.Button();
+            this.buttonOpenDeath = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +145,7 @@
             // buttonClose
             // 
             this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonClose.Location = new System.Drawing.Point(713, 535);
+            this.buttonClose.Location = new System.Drawing.Point(713, 550);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(105, 57);
             this.buttonClose.TabIndex = 11;
@@ -151,7 +154,7 @@
             // 
             // buttonGameState
             // 
-            this.buttonGameState.Location = new System.Drawing.Point(713, 353);
+            this.buttonGameState.Location = new System.Drawing.Point(713, 473);
             this.buttonGameState.Name = "buttonGameState";
             this.buttonGameState.Size = new System.Drawing.Size(105, 57);
             this.buttonGameState.TabIndex = 12;
@@ -241,12 +244,45 @@
             this.textBoxText.TabIndex = 21;
             this.textBoxText.Text = "";
             // 
+            // buttonOpenInventory
+            // 
+            this.buttonOpenInventory.Location = new System.Drawing.Point(713, 65);
+            this.buttonOpenInventory.Name = "buttonOpenInventory";
+            this.buttonOpenInventory.Size = new System.Drawing.Size(105, 57);
+            this.buttonOpenInventory.TabIndex = 22;
+            this.buttonOpenInventory.Text = " Ouvrir l\'inventaire";
+            this.buttonOpenInventory.UseVisualStyleBackColor = true;
+            this.buttonOpenInventory.Click += new System.EventHandler(this.buttonOpenInventory_Click);
+            // 
+            // buttonOpenQuests
+            // 
+            this.buttonOpenQuests.Location = new System.Drawing.Point(713, 128);
+            this.buttonOpenQuests.Name = "buttonOpenQuests";
+            this.buttonOpenQuests.Size = new System.Drawing.Size(105, 57);
+            this.buttonOpenQuests.TabIndex = 23;
+            this.buttonOpenQuests.Text = "Quêtes";
+            this.buttonOpenQuests.UseVisualStyleBackColor = true;
+            this.buttonOpenQuests.Click += new System.EventHandler(this.buttonOpenQuests_Click);
+            // 
+            // buttonOpenDeath
+            // 
+            this.buttonOpenDeath.Location = new System.Drawing.Point(713, 191);
+            this.buttonOpenDeath.Name = "buttonOpenDeath";
+            this.buttonOpenDeath.Size = new System.Drawing.Size(105, 57);
+            this.buttonOpenDeath.TabIndex = 24;
+            this.buttonOpenDeath.Text = "Morts";
+            this.buttonOpenDeath.UseVisualStyleBackColor = true;
+            this.buttonOpenDeath.Click += new System.EventHandler(this.buttonOpenDeath_Click);
+            // 
             // GameSimulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
             this.ClientSize = new System.Drawing.Size(865, 636);
+            this.Controls.Add(this.buttonOpenDeath);
+            this.Controls.Add(this.buttonOpenQuests);
+            this.Controls.Add(this.buttonOpenInventory);
             this.Controls.Add(this.textBoxText);
             this.Controls.Add(this.labelWorshipValue);
             this.Controls.Add(this.labelCoverValue);
@@ -294,5 +330,8 @@
         private System.Windows.Forms.Label labelCoverValue;
         private System.Windows.Forms.Label labelWorshipValue;
         private System.Windows.Forms.RichTextBox textBoxText;
+        private System.Windows.Forms.Button buttonOpenInventory;
+        private System.Windows.Forms.Button buttonOpenQuests;
+        private System.Windows.Forms.Button buttonOpenDeath;
     }
 }
