@@ -8,20 +8,28 @@ namespace theSpyCardEditor
 {
     abstract class Item
     {
-        public readonly bool HasActif, HasPassif;
+        public bool HasPassif { get; private set; }
+        public bool HasActif { get; private set; }
 
-        public Item(bool hasPassif, bool hasActif)
+        public EItemClass ItemClass { get; private set; }
+        public EItemType ItemType { get; private set; }
+
+
+        public Item(bool hasPassif, bool hasActif, EItemClass itemClass, EItemType itemType)
         {
-            this.HasActif = hasActif;
             this.HasPassif = hasPassif;
+            this.HasActif = hasActif;
+
+            this.ItemClass = itemClass;
+            this.ItemType = itemType;
         }
 
-        public abstract string Name();
+        public abstract void BeginFight(Fighter enemy);
 
-        public abstract string Description();
+        public abstract void BeginPassif(Fighter enemy);
 
-        public abstract void BeginPassif();
+        public abstract void PassifEachTurn(Fighter enemy);
 
-        public abstract void PassifEachTurn();
+        public abstract void Action(Fighter enemy);
     }
 }

@@ -8,25 +8,25 @@ namespace theSpyCardEditor
 {
     class ItemStoneCut : Item
     {
-        public ItemStoneCut() : base(false, true) 
+        public ItemStoneCut() : base(false, true, EItemClass.Science, EItemType.Weapon) 
         { }
 
-        public override void BeginPassif()
+        public override void Action(Fighter enemy)
         {
             throw new NotImplementedException();
         }
 
-        public override string Description()
+        public override void BeginFight(Fighter enemy)
         {
             throw new NotImplementedException();
         }
 
-        public override string Name()
+        public override void BeginPassif(Fighter enemy)
         {
             throw new NotImplementedException();
         }
 
-        public override void PassifEachTurn()
+        public override void PassifEachTurn(Fighter enemy)
         {
             throw new NotImplementedException();
         }

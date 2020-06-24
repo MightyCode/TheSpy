@@ -18,10 +18,30 @@ namespace theSpyCardEditor
 
     class ItemFactory
     {
-        public static Dictionary<String, Item> Items = new Dictionary<string, Item>()
+        private static Dictionary<String, Item> items = new Dictionary<string, Item>();
+        public static Dictionary<string, Item>.KeyCollection Keys => items.Keys;
+
+        public static void InitItems()
         {
+            items = new Dictionary<string, Item>()
+            {
+                { "stoneCut",  new ItemStoneCut()}
+            };
+        }
 
+        public static Item GetItem(string name)
+        {
+            if (items == null)
+            {
+                InitItems();
+            }
 
-        };
+            if (items.ContainsKey(name))
+            {
+                return items[name];
+            }
+
+            return null;
+        }
     }
 }
