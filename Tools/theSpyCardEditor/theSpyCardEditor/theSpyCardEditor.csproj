@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardField.cs" />
+    <Compile Include="CreationModification\CardQuestModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreationModification\CardQuestModif.Designer.cs">
+      <DependentUpon>CardQuestModif.cs</DependentUpon>
+    </Compile>
     <Compile Include="Simulation\CardState.cs" />
     <Compile Include="Simulation\FightSystem\Item\Item.cs" />
     <Compile Include="Simulation\FightSystem\Item\ItemFactory.cs" />
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreationModification\CardDescriptionModif.resx">
       <DependentUpon>CardDescriptionModif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreationModification\CardQuestModif.resx">
+      <DependentUpon>CardQuestModif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreationModification\CardStandardModif.resx">
       <DependentUpon>CardStandardModif.cs</DependentUpon>

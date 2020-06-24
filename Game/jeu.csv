@@ -22,5 +22,7 @@ Death 1
 "wrongSpy","fr{Oups, mauvaise personne !};en{}","death-jail","fr{Vous êtes enfermé à vie pour avoir entendu des informations confidentielles . . .};en{}"
 Fight 0
 Equipment 0
-Quest 0
+Quest 1
+"Id","Header","Background","Text"
+"intro7","fr{Intro - Les présentations};en{}","interrogation-point","fr{(^-^)};en{}"
 end

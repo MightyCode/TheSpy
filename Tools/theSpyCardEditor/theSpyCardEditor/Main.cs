@@ -120,6 +120,7 @@ namespace theSpyCardEditor
                     break;
             }
 
+            listCard.Focus();
             listCard_SelectedIndexChanged(this, null);
         }
 
@@ -353,9 +354,12 @@ namespace theSpyCardEditor
                 case EMode.Death:
                     modification = new CardDeathModif(card);
                     break;
-                    /*case EMode.Fight:
-                        //SwitchToFight();
-                        break;*/
+                /*case EMode.Fight:
+                    //SwitchToFight();
+                    break;*/
+                case EMode.Quest:
+                    modification = new CardQuestModif(card);
+                    break;
             }
 
             if (modification != null)
