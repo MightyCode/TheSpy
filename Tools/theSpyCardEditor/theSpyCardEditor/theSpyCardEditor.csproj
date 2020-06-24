@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Simulation\Screens\AchievementScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation\Screens\AchievementScreen.Designer.cs">
+      <DependentUpon>AchievementScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardField.cs" />
     <Compile Include="CreationModification\CardQuestModif.cs">
@@ -60,9 +66,9 @@
     <Compile Include="Simulation\CardState.cs" />
     <Compile Include="Simulation\FightSystem\Item\Item.cs" />
     <Compile Include="Simulation\FightSystem\Item\ItemFactory.cs" />
-    <Compile Include="Simulation\EffectActionList.cs" />
-    <Compile Include="Simulation\EffectToken.cs" />
-    <Compile Include="Simulation\EffectTokenizer.cs" />
+    <Compile Include="Simulation\TokenSystem\EffectActionList.cs" />
+    <Compile Include="Simulation\TokenSystem\EffectToken.cs" />
+    <Compile Include="Simulation\TokenSystem\EffectTokenizer.cs" />
     <Compile Include="Simulation\Expression\BoolExpression.cs" />
     <Compile Include="Simulation\Expression\BoolToBoolBinaryOperator.cs" />
     <Compile Include="Simulation\Expression\NumExprConstante.cs" />
@@ -72,28 +78,28 @@
     <Compile Include="Simulation\Expression\NumToNumBinaryOperator.cs" />
     <Compile Include="Simulation\FightSystem\Item\ItemStoneCut.cs" />
     <Compile Include="Simulation\FightSystem\PlayerStatus.cs" />
-    <Compile Include="Simulation\GameSimulationState.cs">
+    <Compile Include="Simulation\Screens\GameSimulationState.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Simulation\GameSimulationState.Designer.cs">
+    <Compile Include="Simulation\Screens\GameSimulationState.Designer.cs">
       <DependentUpon>GameSimulationState.cs</DependentUpon>
     </Compile>
-    <Compile Include="Simulation\GameSimulationPreChoices.cs">
+    <Compile Include="Simulation\Screens\GameSimulationPreChoices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Simulation\GameSimulationPreChoices.Designer.cs">
+    <Compile Include="Simulation\Screens\GameSimulationPreChoices.Designer.cs">
       <DependentUpon>GameSimulationPreChoices.cs</DependentUpon>
     </Compile>
-    <Compile Include="Simulation\GameSimulation.cs">
+    <Compile Include="Simulation\Screens\GameSimulation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Simulation\GameSimulation.Designer.cs">
+    <Compile Include="Simulation\Screens\GameSimulation.Designer.cs">
       <DependentUpon>GameSimulation.cs</DependentUpon>
     </Compile>
     <Compile Include="SaveAndRead\CardReader.cs" />
     <Compile Include="Simulation\SimulationSystem.cs" />
-    <Compile Include="Simulation\ConditionToken.cs" />
-    <Compile Include="Simulation\ConditionTokenizer.cs" />
+    <Compile Include="Simulation\TokenSystem\ConditionToken.cs" />
+    <Compile Include="Simulation\TokenSystem\ConditionTokenizer.cs" />
     <Compile Include="Simulation\SimulationComputations.cs" />
     <Compile Include="Test\TestSimulation.cs" />
     <Compile Include="Utils\FileMethods.cs" />
@@ -169,13 +175,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Simulation\GameSimulation.resx">
+    <EmbeddedResource Include="Simulation\Screens\AchievementScreen.resx">
+      <DependentUpon>AchievementScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simulation\Screens\GameSimulation.resx">
       <DependentUpon>GameSimulation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Simulation\GameSimulationPreChoices.resx">
+    <EmbeddedResource Include="Simulation\Screens\GameSimulationPreChoices.resx">
       <DependentUpon>GameSimulationPreChoices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Simulation\GameSimulationState.resx">
+    <EmbeddedResource Include="Simulation\Screens\GameSimulationState.resx">
       <DependentUpon>GameSimulationState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utils\LanguageModification.resx">

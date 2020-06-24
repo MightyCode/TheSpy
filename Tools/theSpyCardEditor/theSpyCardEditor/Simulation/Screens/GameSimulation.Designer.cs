@@ -302,7 +302,10 @@
             this.Controls.Add(this.textBoxLeftText);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.pictureCard);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GameSimulation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameSimulation";
             ((System.ComponentModel.ISupportInitialize)(this.pictureCard)).EndInit();
             this.ResumeLayout(false);

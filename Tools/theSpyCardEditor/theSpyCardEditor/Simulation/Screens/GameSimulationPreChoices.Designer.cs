@@ -109,6 +109,8 @@
             this.Controls.Add(this.listBoxParameters);
             this.Controls.Add(this.buttonContinue);
             this.Controls.Add(this.buttonClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GameSimulationPreChoose";
             this.Text = "Modification des paramètres";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownValue)).EndInit();

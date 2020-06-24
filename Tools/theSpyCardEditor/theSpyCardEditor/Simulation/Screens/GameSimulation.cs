@@ -17,6 +17,9 @@ namespace theSpyCardEditor
 
     public partial class GameSimulation : Form
     {
+        Dictionary<Card, bool> deathObtained;
+        Dictionary<Card, bool> questObtained;
+
         GameSimulationState GSS;
 
         Dictionary<string, int> parameters;
@@ -34,8 +37,19 @@ namespace theSpyCardEditor
             InitializeComponent();
             this.parameters = parameters;
 
-            SS = new SimulationSystem(cards, parameters);
+            deathObtained = new Dictionary<Card, bool>();
+            questObtained = new Dictionary<Card, bool>();
+            foreach(Card death in cards[EMode.Death])
+            {
+                deathObtained.Add(death, false);
+            }
+            foreach (Card quest in cards[EMode.Quest])
+            {
+                questObtained.Add(quest, false);
+            }
 
+
+            SS = new SimulationSystem(cards, parameters);
             GSS = new GameSimulationState(parameters, SS);
 
             NextRound();
@@ -111,6 +125,7 @@ namespace theSpyCardEditor
             SetText(currentCard.Properties["Text"].Value);
 
             LoadCardImage(currentCard.Properties["Background"].Value);
+            CheckQuest();
 
             switch (currentCard.Type)
             {
@@ -127,7 +142,7 @@ namespace theSpyCardEditor
                 case EMode.Death:
                     buttonLeft.Text = "Suite";
                     buttonRight.Text = "Suite";
-
+                    deathObtained[currentCard] = true;
                     break;
                 case EMode.Fight:
 
@@ -208,6 +223,7 @@ namespace theSpyCardEditor
                     propertyEffect = "Effect";
                     break;
                 case EMode.Death:
+
                     DeathReset();
                     break;
                 case EMode.Fight:
@@ -340,20 +356,33 @@ namespace theSpyCardEditor
 
         private void buttonOpenInventory_Click(object sender, EventArgs e)
         {
-
         }
 
         private void buttonOpenQuests_Click(object sender, EventArgs e)
         {
-
+            new AchievementScreen(questObtained, false).ShowDialog();
         }
 
         private void buttonOpenDeath_Click(object sender, EventArgs e)
         {
-
+            new AchievementScreen(deathObtained, true).ShowDialog();
         }
 
         #endregion
+
+        private void CheckQuest()
+        {
+            foreach(Card card in questObtained.Keys)
+            {
+                if (currentCard.IdEquals(card.Properties["Id"].Value)){
+                    Console.WriteLine("FOUND");
+                    if (!questObtained[card]){
+                        questObtained[card] = true;
+                    }
+                    break;
+                }
+            }
+        }
 
         private void PrintLabel()
         {
