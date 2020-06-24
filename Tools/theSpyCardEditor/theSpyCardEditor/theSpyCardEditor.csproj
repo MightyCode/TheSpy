@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E08313C5-9645-4190-A76A-F4FAA3647498}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>theSpyCardEditor</RootNamespace>
+    <AssemblyName>theSpyCardEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardField.cs" />
+    <Compile Include="Simulation\CardState.cs" />
+    <Compile Include="Simulation\FightSystem\Item\Item.cs" />
+    <Compile Include="Simulation\FightSystem\Item\ItemFactory.cs" />
+    <Compile Include="Simulation\EffectActionList.cs" />
+    <Compile Include="Simulation\EffectToken.cs" />
+    <Compile Include="Simulation\EffectTokenizer.cs" />
+    <Compile Include="Simulation\Expression\BoolExpression.cs" />
+    <Compile Include="Simulation\Expression\BoolToBoolBinaryOperator.cs" />
+    <Compile Include="Simulation\Expression\NumExprConstante.cs" />
+    <Compile Include="Simulation\Expression\NumExpression.cs" />
+    <Compile Include="Simulation\Expression\NumExprParameter.cs" />
+    <Compile Include="Simulation\Expression\NumToBoolBinaryOperator.cs" />
+    <Compile Include="Simulation\Expression\NumToNumBinaryOperator.cs" />
+    <Compile Include="Simulation\FightSystem\Item\ItemStoneCut.cs" />
+    <Compile Include="Simulation\FightSystem\PlayerStatus.cs" />
+    <Compile Include="Simulation\GameSimulationState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation\GameSimulationState.Designer.cs">
+      <DependentUpon>GameSimulationState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation\GameSimulationPreChoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation\GameSimulationPreChoices.Designer.cs">
+      <DependentUpon>GameSimulationPreChoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation\GameSimulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation\GameSimulation.Designer.cs">
+      <DependentUpon>GameSimulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaveAndRead\CardReader.cs" />
+    <Compile Include="Simulation\SimulationSystem.cs" />
+    <Compile Include="Simulation\ConditionToken.cs" />
+    <Compile Include="Simulation\ConditionTokenizer.cs" />
+    <Compile Include="Simulation\SimulationComputations.cs" />
+    <Compile Include="Test\TestSimulation.cs" />
+    <Compile Include="Utils\FileMethods.cs" />
+    <Compile Include="Simulation\GameProperties.cs" />
+    <Compile Include="Utils\ImageExtension.cs" />
+    <Compile Include="Utils\LanguageModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\LanguageModification.Designer.cs">
+      <DependentUpon>LanguageModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\SpecialMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreationModification\CardDeathModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreationModification\CardDeathModif.Designer.cs">
+      <DependentUpon>CardDeathModif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreationModification\CardDescriptionModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreationModification\CardDescriptionModif.Designer.cs">
+      <DependentUpon>CardDescriptionModif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreationModification\CardStandardModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreationModification\CardStandardModif.Designer.cs">
+      <DependentUpon>CardStandardModif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\EditorProperties.cs" />
+    <Compile Include="Utils\Language.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveAndRead\CardWriter.cs" />
+    <Compile Include="Utils\UserPreferences.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\WantSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\WantSave.Designer.cs">
+      <DependentUpon>WantSave.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreationModification\CardDeathModif.resx">
+      <DependentUpon>CardDeathModif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreationModification\CardDescriptionModif.resx">
+      <DependentUpon>CardDescriptionModif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreationModification\CardStandardModif.resx">
+      <DependentUpon>CardStandardModif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Simulation\GameSimulation.resx">
+      <DependentUpon>GameSimulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simulation\GameSimulationPreChoices.resx">
+      <DependentUpon>GameSimulationPreChoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simulation\GameSimulationState.resx">
+      <DependentUpon>GameSimulationState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\LanguageModification.resx">
+      <DependentUpon>LanguageModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\WantSave.resx">
+      <DependentUpon>WantSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="resources\backcard.png" />
+    <Content Include="resources\big-point.png" />
+    <Content Include="resources\card-archmage.png" />
+    <Content Include="resources\card-basic-soldier.png" />
+    <Content Include="resources\card-camp-instructor.png" />
+    <Content Include="resources\card-death-standard.png" />
+    <Content Include="resources\card-dictator.png" />
+    <Content Include="resources\card-farmer.png" />
+    <Content Include="resources\card-friend-spy.png" />
+    <Content Include="resources\card-game-title.png" />
+    <Content Include="resources\card-gardian-mage.png" />
+    <Content Include="resources\card-homemaid.png" />
+    <Content Include="resources\card-inhabitant-female.png" />
+    <Content Include="resources\card-inhabitant-male.png" />
+    <Content Include="resources\card-inhabitant2-male.png" />
+    <Content Include="resources\card-manager-worship-association.png" />
+    <Content Include="resources\card-merchant-male.png" />
+    <Content Include="resources\card-participant-worship-association.png" />
+    <Content Include="resources\card-politician.png" />
+    <Content Include="resources\card-prostitute.png" />
+    <Content Include="resources\card-scientist.png" />
+    <Content Include="resources\card-ternia-gouvernment-advisor.png" />
+    <Content Include="resources\card-thug.png" />
+    <Content Include="resources\death-chemical.png" />
+    <Content Include="resources\death-head-shooted.png" />
+    <Content Include="resources\death-heart-shooted.png" />
+    <Content Include="resources\death-icon.png" />
+    <Content Include="resources\death-jail.png" />
+    <Content Include="resources\death-standard.png" />
+    <Content Include="resources\fight-archimage.png" />
+    <Content Include="resources\fight-instructor.png" />
+    <Content Include="resources\fight-thug.png" />
+    <Content Include="resources\fight-tigress-advisor.png" />
+    <Content Include="resources\icon-cover-empty.png" />
+    <Content Include="resources\icon-cover-full.png" />
+    <Content Include="resources\icon-money-empty.png" />
+    <Content Include="resources\icon-money-fulld.png" />
+    <Content Include="resources\icon-population-empty.png" />
+    <Content Include="resources\icon-population-full.png" />
+    <Content Include="resources\icon-stun-white.png" />
+    <Content Include="resources\icon-stun.png" />
+    <Content Include="resources\icon-worship-empty.png" />
+    <Content Include="resources\icon-worship-full.png" />
+    <Content Include="resources\interrogation-point.png" />
+    <Content Include="resources\little-point.png" />
+    <Content Include="resources\place-library.png" />
+    <Content Include="resources\place-road.png" />
+    <Content Include="resources\rune-attack.png" />
+    <Content Include="resources\rune-defence.png" />
+    <Content Include="resources\rune-dodge.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

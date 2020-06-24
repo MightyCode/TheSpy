@@ -1,0 +1,333 @@
+Id ,Character Name ,Background ,Weight ,Text ,Text Choice Left,Back Text Left,Effect Choice Left,Text Choice Right ,Back Text Right ,Effect Choice Right,Money Left,Cover Left,Population Left,Worship Left,Money Right,Cover Right,Population Right,Worship Right,Grade+Droite,Grade+Gauche,Time To pass,necessary attribute
+Intro,,,,,,,,,,,0,0,0,0,0,0,0,0,,,,
+i0001,"Elma, Ternia gouvernment advisor","card-advisor-female 
+",/,"Hum … Hello. It is you the next
+ spy who will infiltrate Eter ?",No ,,"go card i0002
+",Yes,"
+","  go card i0003
+",0,0,0,0,0,0,0,0,,,0,
+i0002,"Elma,Ternia gouvernment advisor","card-advisor-female 
+",/,"What ?! Sorry but i will have to lock 
+you up. You had just heard 
+confidential informations ","I don’t want to be lock up !
+","
+",go death d0002,"I’m joking ! 
+","The advisor look like to be 
+upset, she's not here to
+ laugh.","AngryAdvisor++
+if AngryAdvisor= 3 -> go death d0001
+else  go card i0003
+",0,0,0,0,0,0,0,0,,,0,
+i0003,"Elma, Ternia gouvernment advisor","card-advisor-female 
+",/,"You’ll become a government 
+advisor. Your mission is to balanced the population, spy cover, 
+cash and dictator worship.","Nope !
+","
+",go card i0002,Okay ! ,,"go card i0004
+",0,0,0,0,0,0,0,0,,,0,
+i0004,"Elma, Ternia gouvernment advisor","card-advisor-female 
+",/,"As you know, we have no more magic in Ternia but in Eter you will be able to feel it back. Be careful, their government is very afraid of the Magic. So the use of powerful Supports is prohibed.",I forgot a little what is support.,,go card i0005,Ok !,,go card i0007,0,0,0,0,0,0,0,0,,,0,
+i0005,"Elma, Ternia gouvernment advisor","card-advisor-female 
+",/,"Spells use an incantation, so a VERY long sentence. While the use of Support allows you to use a spell instantly, you just have to infuse its magic into Support.","That's fine, i remember the details !",,go card i0007,You can continue.,,go card i0006,0,0,0,0,0,0,0,0,,,0,
+i0006,"Elma, Ternia gouvernment advisor ","card-advisor-female 
+",/,"From what we know, there are only very few mages left in Eter, they are dangerous influences. In any case, the political path will allow you to succeed in the mission.",Finally I'm don't want to be a Spy ! Magic scares me !,,go card i0002,Understand !,,go card i0007,0,0,0,0,0,0,0,0,,,0,
+i0007,"Elma, Ternia gouvernment advisor ","card-advisor-female 
+",/,"You must also rise in grade to hope to overthrow the dictator and put an end to this Eternal war. Besides, do you need to learn combat system ?","No, I don't need.",,go card i00010,Yes please !,,go card i008,0,0,0,0,0,0,0,0,,,0,
+i0008,"Elma, Ternia gouvernment advisor ","card-advisor-female 
+",/,"You have three move : fight, defend and dodge. A defence reduces the damages taken and can allow you to deal a stun effect. ",And ?,,go card i0009,...,,go card i0009,,,,,,,,,,,,
+i0009,"Elma, Ternia gouvernment advisor","card-advisor-female 
+",/,"If you managed to dodge attack of your ennemy, you can deal extra damage the next turn. Attack is ... Attacking. Ready for a demo ?",No.,She attacks without letting you the time to react.,"
+go card i0010
+launch fight f0001",Yes.,,"
+go card n0010
+lauch fight f0001",,,,,,,,,,,,
+i00010,"Elma, Ternia gouvernment advisor ",card-advisor-female,,Your mission begin now !,I’m ready !,,lauch game,"Let’s begin the mission ! 
+",,lauch game,,,,,,,,,,,,
+,,,,,,,/,,,/,,,,,,,,,,,,
+,,,,,,,/,,,/,,,,,,,,,,,,
+,,,,,,,/,,,/,,,,,,,,,,,,
+,,,,,,,/,,,/,0,0,0,0,0,0,0,0,,,,
+n0001,"Surina, the Prosti … the girl of Joy
+",card-prostitute,2,"This night I and my colleagues can take care of you and your friends.
+",No way !,,block card for 5,"Yes please madam . . .
+",,"block card for 5
+
+protituteCounter++
+if protitureCounter = 3 -> launch death d0014
+",0,0,-10,0,-10,0,15,0,,,50,
+n0002,"A Farmer, [random name]
+","card-farmer
+",2,"My sheeps are hunted. I think It is a wolf, I need money to secure my farm.
+","No !
+",,"remove card 
+","Yes, Sure !
+",,"remove card
+",10,0,-10,0,-10,0,10,0,,,50,
+n0003,"Manager association of the dictator's image
+","card-manager-worship-association
+",4," As you know, my association accredited by the dictator himself is really concerned with its image. Do you want to build a statue of his greatness in your jurisdiction?
+","Sorry but we can’t
+",,"go card n0004
+block card for 8","Yes, Sure !
+",,"block card inf
+StatueBuild +1
+block card n0004 for 5",0,0,0,-15,-15,10,0,10,,,0,Grade=0
+n0004,"Manager association of the dictator's image
+
+","card-manager-worship-association
+",/,And why you wouldn’t build a statue of our highness ?,Our economy is in bad shape.," if (economy > 30%) 
+if (chance > 50 %) :
+“The manager believed you”.
+else :
+“The manager noticed that has noticed that your economy is not as low a what you say ...”
+else:
+ “The manager notice that actually your economy is low.”
+"," if (economy > 30%):
+if (chance > 50 %):
+worship go up 5
+else :
+    cover go down 10
+    worship go down 10
+else:
+ worship go up 5
+","The population not going to like a huge statue on the front of their house.
+",,/,0,"-15 | 0
+",0,-15 | +10,0,-10,0,0,,,50,
+n0005,"Manager association of the dictator's image
+","card-manager-worship-association
+",2,"This night, the statue of this highness has been griffed.
+","Ohh it's really too bad.
+","
+
+","remove card 
+add card n003
+block card 003 for 7",Let’s rebuild the statue !,,"block card for 20
+",0,0,0,0,0,0,0,0,,,50,StatueBuild >= 1
+n0006,A Merchant,card-merchant-male,4, I visited abandonned house and I found some little treasures. I need permission to take those things.,"Your story doesn't interest me, have a nice day",,block card for 10 turns,"You have my permission, what is parts ?",,go card n0007,0,0,-10,0,0,0,0,0,,,25,
+n0007,A Merchant,card-merchant-male,/,"Thanks, I thing that theasures should be Magic Supports. I propose to you a fifty/fifty ?",I prefer 70 for me.,The merchant thought that you're tough in business,"
+/",,The merchant seems to be happy,,15,0,-10,0,10,0,0,0,,,25,
+n0008,A Soldier,card-soldier,2,"I talked with the other, we think that there are too much guards tour.","Lot of guards tour are usefull, I think nights in Eter are not sure.",,block card for 5,It's a measure that I will take !,,block card for 5,0,-10,15,0,0,15,-10,0,,,50,
+n0009,A City Girl,card-inhabitant-female,1,"A weird plant has grown on the floor of our house, can help us giving some Supports. It growths currently ! ","I can't help you, I prefer to not use Supports",,add a new n00010 card,Yes !,,remove card,0,10,0,0,-20,-20,0,0,,,100,KnowMagic>= 1
+n0010,A City Man,card-inhabitant-male,/ - 2,"A weird plant has grown on the floor of our house, can help us giving some Supports. . It growths currently ! ","I can't help you, I prefer to not use Supports",,add a new n0009 card,Yes !,,remove card,0,10,0,0,-20,-20,0,0,,,100,
+n0011,A Politician,car-politician,2,"I come from the gouvernment, they want to reward you for the help you
+provided in your little city.",I don't need money,The politicien looking at you weirdly. Who would refuse free money? ,block card for 15,I like to feel my pocket full !,,block card for 15,0,-10,0,0,10,0,0,0,,,25,"Grade=0
+AND Cover>50"
+n0012,"Manager association of the dictator's image
+
+","card-manager-worship-association
+",1,My association would like replacing this farmer's house with a church for the holy dictator. We will represent it with the mysterious magic aura.,"Without farmers, no food.",,block card for 5,The light of our holy dictator dictates my choice !,,block card for 5,0,0,10,-10,0,0,-10,10,,,50,
+n0013,A Soldier,card-soldier,1,"The soldiers' unit committee, the SUC, would like to build a barrackment instead of this farm.","Sorry but 
+farmers are too essential in food production",,block card for 5,The order is my pride.,,block card for 5,0,-30,10,0,0,10,-10,0,,,50,
+n0014,A Farmer,"card-farmer
+",1,"
+The production of food is too low, we want replace a church by a farm but we do not stand up against the association of the image of the dictator. Can you give your accreditation?",Faith in the dictator is more important.,,block card for 5,"It's better to have a full belly.
+
+",,block card for 5,0,0,-10,10,0,0,10,-10,,,50,
+n0015,A Farmer,"card-farmer
+",1,"
+The production of food is too low, we want replace a barrackment by a farm but we do not stand up against the soldier's unit commettee. Can you give your permission ?","No, the order is important.",,block card for 5,My stomach says yes.,,block card for 5,0,10,-10,0,0,-10,10,0,,,50,
+n0016,"Manager association of the dictator's image
+
+","card-manager-worship-association
+",1,My association would like replacing this barrackment with a church for the holy dictator. We will represent it with his beautiful beard,I don't want it,,block card for 5,I look forward to your church.,,block card for 5,0,10,0,-10,0,-10,0,10,,,50,
+n0017,A Soldier,card-soldier,1,"The soldiers' unit committee would 
+like to build a barrackment instead 
+of the church.
+",We can't detroy a church of our highness.,,block card for 5,I like the order !,,block card for 5,0,-10,0,10,0,10,0,-10,,,50,
+n0018,A City Man needing help,card-inhabitant2-male,2,"SAVE MEEE !!! I found a strange object. He completely covered my house with ice when I put it on a table. I think that object is a mysterious Support.
+",I will ensure my safety by denouncing you.,,remove card,I send people to help you,You would recover the dangerous Support at the same time,"remove card
+go card n0019",0,10,-10,0,0,-10,10,0,,,50,"KnowMagic > 1
+"
+n0019,A City Man needing help,card-inhabitant2-male,/,"People have helped me. Here is the Support they got from the ice block.
+What are you going to do with this object?",I will hand it over to the higher authorities.,Except that they put the dangerous objects back into the wild.,add card n0018,"I'll keep it aside, I know how to control its power.
+",,add card n0020,0,20,0,0,0,-20,0,0,,,50,KnowMagic > 1
+n0020,A Scientist,card-scientist,/-2,"I have heard rumors that you have recovered Support. Not far from me the idea of ​​wanting to denounce you. . . I just want you to lend it to me.
+",Sorry but not at the moment.,,"remove card
+add card n0021","If you want it, but be careful, you must keep it far enough away from you
+
+.",,"remove card
+GlobalFreezingSupportGived = 1",0,10,0,0,0,-10,0,0,,,25,KnowMagic > 1
+n0021,A Scientist ,card-scientist,/-2,"And now would you like to give me Support? I would be more discreet because I really need it.
+",Sorry but not at the moment.,,block card for 5,"If you want it, but be careful, you must keep it far enough away from you
+
+.",,"remove card
+GlobalFreezingSupportGived = 1",0,10,0,0,0,0,0,0,,,25,KnowMagic > 1
+n0022,A Myterious Man,card-archmage,"1 (init block 8)
+(mettre a 2 une fois découvert une première fois)","(A strange man draw near) Hello, I just enter on you office ... I have one important question. What do you think about the Dictator ?
+",Strange question indeed ...,,go card n0023,I think it's a good dictator,He looks mysteriously annoyed by your answer.,remove card,0,0,0,0,0,10,0,10,,,10,Grade=0
+n0023,A Mysterious Man,card-archmage,/,You don't answer me instantly. . . Are you not sure? Are you a Spy? From Ternia?,No.,He noticed you lie.,block card n0023 for inf,What ?! How did you guess ! Now I must kill you !,He doesn't seem to be afraid of your threat.,go card n0024,0,0,0,0,0,0,0,0,,,0,
+n0024,A Mysterious Man,card-archmage,/,"Don't worry, don't be afread, I'm also hiding from the dictator.
+ Come with me, it's a bit far but it interest you..","No I prefer to protect my backs and denounce you.
+","if (chance > 50 %):
+""You fled before he could react""","if (chance > 50 %):
+remove card
+else :
+lauch death d0003","Okay, I follow you.","You have followed the mysterious man with his car, he has driven you to a big city. He paid attention to the cameras in the streets and took you to a basement.","if GlobalHiddenLibraryVisited=1:
+go card n00025
+else :
+go narrative l0001",0,0,10,0,0,10,-10,10,,,0,
+n0025,A Mysterious Man,card-archmage,/,"Have you ever heard of this place ?
+
+",No never.,,go narrative l0001,Yes I know it thanks to the information of Ternia,,go card n0026,0,0,0,0,0,0,0,0,,,0,
+n0026,A Man who is not mysterious,card-archmage,/,"So, I make the presentation, I am the Archmage, protector and master of the sect of magicians.  Who am I speaking with ?","A spy of Ternia, my goal is to Dismiss dictator to stop war.",,go card n0027,Someone who wants to arrest the dictator for the sakes of peoples.,,go card n0027,0,0,0,0,0,0,0,0,,,0,
+n0027,The Archmage,card-archmage,/,This place and this guild is the last memorie of the True past. A past that many people ignore. ,But I know her fortunately ...,,go card n0030,Tell me more ?,,go card n0028,0,0,0,0,0,0,0,0,,,0,
+n0028,The Archmage,card-archmage,/,"You know this country is very afraid of magicians, well we are the last survivors of an ongoing genocide.",...,,go card n0029,...,,go card n0029,0,0,0,0,0,0,0,0,,,0,
+n0029,The Archmage,card-archmage,/,"The country was unified under the same standard. But an eternal war has separated a people, dividing between those who live without magic and encountering famines, those from Ternia, and those still having magic and undergoing the yoke of the dictator, those from Eter.",...,,go card n0030,...,,go card n0030,0,0,0,0,0,0,0,0,,,0,
+n0030,The Archmage,card-archmage,/,"There are other ways to save both countries. For now you have to get stronger, I'll teach you the basics of magic",I want to practice right away.,,go fight f0002,The theoretical basis then practical will be necessary for me,,go card n0031,0,0,0,0,0,0,0,0,,,0,
+n0031,The Archmage,card-archmage,/,"We mages can write spells on Supports to be able to use the spell instantly. But the more powerful the spell spelled out, the more resources you will need to use it. It is also very tiring to use a Support for too long.
+",...,,go card n0032,...,,go card n0032,0,0,0,0,0,0,0,0,,,0,
+n0032,The Archmage,card-archmage,/,"Magic can be improved in 4 points. The object that will become Support, spell carving, knowledge of spells and finally magic personal resources.",...,,go card n0033,...,,go card n0033,0,0,0,0,0,0,0,0,,,0,
+n0033,The Archmage,card-archmage,/,There are spells that I could teach you later to broaden your attack options but I prefer to give you useful Support after our training.,Let's go training ! ,,lauch fight f0002,Go to the training !,,lauch fight f0002,0,0,0,0,0,0,0,0,,,0,
+n0034,The Archmage,card-archmage,/,"I would like to see you later to explain my plans and to train you. Normal people won't see you using the stand, good luck.",See you later !,"What a strange place ...
+",KnowMagic = 1,Good bye !,What a strange discovery ...,KnowMagic = 1,0,0,0,0,0,0,0,0,,,200,
+n0035,A Farmer,"card-farmer
+",2,"If you invest in my farm, I can produce more. In a short time you will have more profit.",I can't,,block card for 7,Why not !,,"block card for 10
+add card n0036
+block card n00036 for 2",0,0,0,0,-10,0,0,0,,,50,
+n0036,A Farmer,"card-farmer
+",/-999,"Thank you, the money you gave me has served me a lot, here's how to thank you.","Finally I don't need your money, you can keep it.",,"remove card
+add card n0037
+block card for 2",It was really profitable!,,remove card,0,0,10,0,10,0,0,0,,,50,
+n0037,A Farmer,"card-farmer
+",/-999,I come back to you because with the money you left me I was able to develop my farm even more.,We really don't need your money.,,remove card,Thank you very much !,,remove card,0,0,10,0,20,0,0,0,,,50,
+n0038,"A Questionable Politician
+",car-politician,1,Are you interested in a fruitful market ?,I'm afraid of what you are going to offer me,,"remove card
+add card n0039
+block card n0039 for 5",I'm listening to you.,,"go card n0040
+block card for 5",0,0,0,0,0,-10,0,0,,,50,
+n0039,"A Questionable Politician
+",car-politician,/-2,"Are you still not interested in my proposal of black market.
+","No, really not.",,remove card,I agree to listen to you this time.,,"add card n0038
+remove card
+go card n0040
+",0,10,0,0,0,-15,0,0,,,50,
+n0040,"A Questionable Politician
+",car-polician,/,I can pay you if you close your eyes to the black market. Prefer to turn a blind eye to the sale of a weapon or the sale of trafficked vehicles.,I prefer to ignore the sale of weapons.,,add new card n0041,I prefer to ignore the sale of trafficked vehicle.,,add new card n0041,10,-10,0,0,10,0,-10,0,,,50,
+n0041,A Thug,card-thug,1,C'mere ! Give me your money or I'll cut you !,"""Run away"".",,block card for 5,"""Challenge him""",,go fight f0003,0,0,0,0,0,0,0,0,,,25,
+n0042,A Politician,card-politician,2,"I come from the government, lead by example, make the population a little more obedient !",No thank you.,,block card for 5,I will do it.,,block card for 5,0,0,0,-20,0,0,-20,0,,,,
+n0043,A Soldier from another city,card-soldier,2 (init block 10),I was asked to take you to a camp not far from here for training as we are at war. Can you come now ?,"No, I have other business to settle.",,"remove card
+card add n0044","Yes, I am available.",You took an army truck and you went to a camp.,go n0045,0,0,0,0,0,0,0,0,,,,Grade=0
+n0044,A Soldier from another city,card-soldier,/-3,And now ? Are you available ? I must quickly take you to camp.,Maybe a little later,,/,Yes this time,You took an army truck and you went to a camp.,"remove card
+add card n0043 
+go n0045",0,-5,0,0,0,0,0,0,,,,Grade=0
+n0045,A Instructor,card-camp-instructor,/,The high-ranking army officers have instructed us to train you to better manage your troops and the population.,Okay !,,go card n0046,Ok !,,go card n0046,0,0,0,0,0,0,0,0,,,,
+n0046,A Instructor,card-camp-instructor,/,"Depending on your results, you will be well rewarded. We will now fight.
+",I would be the best !,,"
+lauch fight f0004",I will give everything!,,"
+lauch fight f0004",0,0,0,0,0,0,0,0,,,,
+n0047,A Instructor,card-camp-instructor,/,"You lost, it's a shame. We will invite you again.
+
+",See you next time.,,,Too bad ...,,,0,0,0,0,0,0,0,0,,,,
+n0048,A Instructor,card-camp-instructor,/,"You now manage an average city.
+Game continues soon, thank you for playing
+.",This game is great.,,grade=1,This game is the best.,,,0,0,0,0,0,0,0,0,,,,
+n0050,,,,,,,,,,,,,,,,,,,,,,
+n0051,,,,,,,,,,,,,,,,,,,,,,
+n0052,,,,,,,,,,,,,,,,,,,,,,
+n0053,,,,,,,,,,,,,,,,,,,,,,
+n0054,,,,,,,,,,,0,0,0,0,0,0,0,0,,,,
+n0055,A Politician,card-politician,2,"I come from the gouvernment, they want to reward you for the help you
+provided in your middle city.",Money does not make you happy.,The politicien looking at you weirdly. Who would refuse free money? ,block card for 15,I like to feel my pocket full !,,block card for 15,0,15,0,0,10,0,0,0,,,25,"Grade=1
+AND Cover>50"
+n0056,A City Girl,card-inhabitant-female,2,"Despite the fact that we are a small town, can we make a projection of a film in the central square.
+","Sorry, but this project costs.",,,"Yes, why not ?",,,10,0,-10,0,-10,0,0,0,,,,Grade=0
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,45,40,-15,-35,-25,-70,-15,30,,,,
+,,,,,,,,,,,"0,8823529412","0,8","-0,2941176471","-0,7","-0,4901960784","-1,37254902","-0,2941176471","0,5882352941",,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,Money,Cover,Population,Worship,,,,,,,,
+,,,,,,,,,,Moyenne,"0,1960784314","-0,2862745098","-0,2941176471","-0,05588235294",,,,,,,,
+,,,,,,,,,,somme,20,-30,-30,-5,,,,,,,,
+,,,Condition,,,,,,,,,,,,,,,,,,,
+"
+Deaths
+",,,,,,,,,,,,,,,,,,,,,,
+d0001,Upset the advisor !,death-head-shot,,"Don't annoy someone who has other administrative records than you today
+
+",,,,,,,,,,,,,,,,,,
+d0002,Refuse the mission !,death-jail,,"You were locked up and you will end 
+your days there … Seems like it’s an 
+end of an adventure before it starts !",,,,,,,,,,,,,,,,,,
+d0003,Mysterious death !,death-standard (death-fireball),,You smell burnt before falling asleep forever.,,,,,,,,,,,,,,,,,,
+d0004,General famine,death-standard (death-famine),(low grade),"(money too low)
+ We find you starving in your bed.",,,,,,,,,,,,,,,,,,
+d0005,Hanged !,death-standard (death-hanged),(high grade),"(money too low) 
+You are hanged high and short with members of the government because of money wasted.",,,,,,,,,,,,,,,,,,
+d0006,Avalanche of gold !,death-standard (death-avalanche),,"(money too high) 
+Today is a black track! We find you suffocated by an avalanche of money. ",,,,,,,,,,,,,,,,,,
+d0007,Proven spy !,death-jail,,"(cover too low) 
+You are imprisoned for life.",,,,,,,,,,,,,,,,,,
+d0008,Killed by your own camp !,death-heart-shooted,,"(cover too high) 
+The government of Ternia suspects you of having passed from the enemy camp and of being able to give information.",,,,,,,,,,,,,,,,,,
+d0009,Civil war !,death-standard (death-civil-war),(low grade),"(worship too low) 
+You are part of the collateral damage of the unpopularity of the dictator.",,,,,,,,,,,,,,,,,,
+d0010,The Goulag ! ,death-standard (death-goulag),(high grade),"(worship too low) 
+The dictator accuses you and your collaborators of his unpopularity.",,,,,,,,,,,,,,,,,,
+d0011,Sectarianism !,death-standard (death sectarism),,"(worship too high)
+Completely blinded by this radiant sun, you are leaving to join the sect of the holy dictator.
+",,,,,,,,,,,,,,,,,,
+d0012,Guillotined ! ,death-standard (death-guillotine),,"(population too low)
+The population is too unhappy, they take you responsible.",,,,,,,,,,,,,,,,,,
+d0013,Extreme adulation !,death-standard (death-adulation),,"(population too high)
+Everyone adores you, we take your picture, we write books about you, we make films about you. The government takes a dim view of it and liquidates you.
+",,,,,,,,,,,,,,,,,,
+d0014,"""Peasure make heart attack""","death-standard
+(death-wore)",,You die from a heart attack. Too much pleasure ...,,,,,,,,,,,,,,,,,,
+d0015,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+"
+Descriptions",,,Effect (because one choice),,,,,,,,,,,,,,,,,,,
+l0001,The hidden library,place-library,go description l002,"To your surprise, you were arriving in a large library with a few people.
+",,,,,,,,,,,,,,,,,,
+l0002,The hidden library,place-library,go description l003,"It was gigantic, almost as big as an entire skyscrappers. The shelves crumble under the flood of books but not only.",,,,,,,,,,,,,,,,,,
+l0003,The hidden library,place-library,go card n0026,"There were also lots of dusty objects, others that seemed to be placed there for decoration. But especially what suprice you was the abundance of Supports.",,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+"Fights
+",Character,Background,Enemy damage,Enemy life ,Enemy defence ,Enemy stun percent,Enemy doge percent,Is dead if loose,win stat up,Loose stat up,Next loose,Next win,,,,,,,,,,
+f0001,The  tigress advisor,fight-tigress-advisor,,,,10,,No,,,go card i00010,go card i00010,,,,,,,,,,
+f0002,The archimage (hold himself),fight-archmage,,,,,,no,,,,,,,,,,,,,,
+f0003,Small town thug,fight-thug,,,,,,yes,,,continu the gameeuhh,,,,,,,,,,,
+f0004,Camp instructor,fight-instructor,,,,,,No,,,go card n0047,go card n0048,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,.... - - .--. ... ---... -..-. -..-. .-- .-- .-- .-.-.- -.-- --- ..- - ..- -... . .-.-.- -.-. --- -- -..-. .-- .- - -.-. .... ..--.. ...- -...- -.. --.- .-- ....- .-- ----. .-- --. -..- -.-. --.-,,

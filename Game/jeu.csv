@@ -1,0 +1,24 @@
+version:1.1.0
+Standard 2
+"Id","Header","Background","Text","TextLeft","TextRight","EffectLeft","EffectRight","BackTextLeft","BackTextRight","ConditionsLeft","ConditionsRight","NecessaryConditions","Weight"
+"intro1","fr{Conseillère du gouvernement de Ternia};en{Ternia gouvernement advisor}","card-ternia-gouvernment-advisor","fr{Bonjour, êtes vous le \"Pionnier\" ? Celui qui va infiltrer Eter ?};en{}","fr{Euh, je crois que vous vous êtes trompé de personne...};en{}","fr{Oui, c'est bien moi. };en{}","go card intro2;","go description intro3;","fr{};en{}","fr{};en{}","","","globalIntro == 0","inf"
+"intro2","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Si vous n'êtes pas celui que nous recherchons, nous allons devoir vous enfermer. Les informations que vous venez d'entendre sont secrètes.};en{}","fr{Mais ... je ne veux pas mourir.};en{}","fr{C'est une blague. Je suis réellement cet espion.};en{}","go death wrongSpy;","go description intro3;","fr{};en{}","fr{};en{}","","","","/"
+Description 8
+"Id","Header","Background","Text","Effect","Conditions"
+"intro3","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Bon .. bon ... Avant de vous envoyer chez l'ennemi, j'aimerais vous expliquer quelques petites choses. Vous serez le premier espion à être envoyé à Eter. Vous allez devenir un représentant de cette dictature, dans une petite ville proche de la frontière. Vous allez devenir un maire en quelque sorte.};en{}","go description intro4;",""
+"intro4","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Votre but sera d'obtenir la confiance de la dictature d'Eter. Car une fois celle-ci acquise, votre mission prendre fin et grâce à votre soutien et celle de votre ligné; nous pourrons plus facilement infiltrer de nouveaux espions dans cette ville.};en{}","go description intro5;",""
+"intro5","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{En étant le \"maire\" de cette ville, vous allez devoir faire des choix pour maintenir quatre indicateurs. Ces indicateurs sont la **couverture**(darkblue), la **situation monétaire**(darkblue), la **satisfaction de la population**(darkblue), et enfin l'**image du dictateur**(darkblue).};en{}","go description intro6;",""
+"intro6","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Si un des indicateurs devient extrême, trop haut, ou trop bas, il risque de se passer un malheureux évènement (hum... hum...). Votre mission n'est qu'un prélude, elle ne devrait pas être longue. Malgré tout, il peut y avoir des dangers et la nécessité de vous defendre.};en{}","go description intro7;",""
+"intro7","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Pour combattre, vous possédez des emplacements pouvant accueillir des équipements scientifiques, des sortilèges ou des Supports. Les sortilèges et les Supports sont des équipements magiques.};en{}","go description intro8;",""
+"intro8","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Les équipements peuvent avoir des effets passifs et actifs. Un effet actif est une action que vous pourrez faire pendant le combat. Tandis qu'un effect passif est effectif tout le temps. 
+En ma qualité de conseillère, je vais combattre pour vous tester.
+Choississez un équipement. };en{}","go description intro10;",""
+"intro10","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Soyez rassuré. Le gouvernement est prêt à offrir des equipements pour vous et les prochains espions. Même en temps de guerre, notre gouvernement est généreux. };en{}","go description intro11;",""
+"intro11","fr{Conseillère du gouvernement de Ternia};en{}","card-ternia-gouvernment-advisor","fr{Un dernier mot : 
+Nous pensons que devenir le maire d'une ville moyenne sera suffisant pour obtenir le point d'ancrage que nous voulons dans Eter. Nous esperons que votre mission se passera parfaitement. Elle est un peu le **tutoriel**(darkblue) de notre plan.
+Bonne chance !};en{}","globalIntro = 1;",""
+Death 1
+"Id","Header","Background","Text"
+"wrongSpy","fr{Oups, mauvaise personne !};en{}","death-jail","fr{Vous êtes enfermé à vie pour avoir entendu des informations confidentielles . . .};en{}"
+Fight 0
+end

@@ -1,0 +1,28 @@
+version:1.1.0
+Standard 2
+"Id","Header","Background","Text","TextLeft","TextRight","EffectLeft","EffectRight","BackTextLeft","BackTextRight","ConditionsLeft","ConditionsRight","NecessaryConditions","Weight"
+"test","fr{test};en{Elma, Ternia Gouvernement Advisor}","card-ternia-gouvernment-advisor","fr{HEELLOOOOO};en{Hum … Hello. It is you the next
+ spy who will infiltrate Eter ?}","fr{Allez au test des labels et des backcards};en{No}","fr{Continuer};en{Yes}","money += 10;
+go card test2;","go card test3;","fr{Je suis une back text Hello};en{}","fr{};en{}","","","","inf"
+"test2","fr{TEST};en{}","card-merchant-male","fr{Hello je suis une carte de test};en{}","fr{};en{}","fr{};en{}","rich {
+money -= 5;
+}
+low {
+money +=5;
+}
+
+go card test2
+",";","fr{rich {
+Je suis riche.
+}
+low{
+Je suis pauvre
+}};en{}","fr{};en{}","if (money > 50){
+rich
+} else {
+low
+}","","","/"
+Description 0
+Death 0
+Fight 0
+end
