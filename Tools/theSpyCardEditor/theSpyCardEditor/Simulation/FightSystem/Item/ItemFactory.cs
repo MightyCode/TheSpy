@@ -43,5 +43,24 @@ namespace theSpyCardEditor
 
             return null;
         }
+
+        public static bool IfScientificItem(Item item) =>  IfScientificItem(item.ItemClass);
+        public static bool IfScientificItem(EItemClass itemClass) => itemClass == EItemClass.Science;
+
+        public static bool IfMagicItem(Item item) => IfMagicItem(item.ItemClass);
+
+        public static bool IfMagicItem(EItemClass itemClass) => itemClass == EItemClass.Support || itemClass == EItemClass.Spell;
+
+        public static bool SameArchtype(Item item1, Item item2)
+        {
+            return SameArchtype(item1.ItemClass, item2.ItemClass);
+        }
+
+        public static bool SameArchtype(EItemClass class1, EItemClass class2)
+        {
+            if (class1 == EItemClass.Null)  return (class2 == EItemClass.Null);
+            if (IfMagicItem(class1))        return (IfMagicItem(class2));
+            if (IfScientificItem(class1))   return (IfScientificItem(class2));
+        }
     }
 }

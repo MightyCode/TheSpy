@@ -54,12 +54,32 @@ namespace theSpyCardEditor
         private void CheckTypeStatus()
         {
             // Todo
+            bool nullMet = false;
             bool first = false;
             EItemClass type = EItemClass.Null;
 
             foreach (string key in items.Keys)
             {
+                nullMet = nullMet || (items[key].Item.ItemClass == EItemClass.Null);
+
+                if (first)
+                {
+                    if (!ItemFactory.SameArchtype(type, items[key].Item.ItemClass))
+                    {
+                        type = EItemClass.Null;
+                        break;
+                    }
+                } else
+                {
+                    if (items[key].Item.ItemClass != EItemClass.Null)
+                    {
+                        type = items[key].Item.ItemClass;
+                    }
+                }
             }
+
+            GlobalEquipedItemClass = type;
+            GlobalItemClass = (nullMet) ? EItemClass.Null : type;
         }
     }
 }

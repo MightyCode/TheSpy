@@ -49,6 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Simulation\FightSystem\EnemyFighter.cs" />
+    <Compile Include="Simulation\FightSystem\EnemyFighterFactory.cs" />
+    <Compile Include="Simulation\FightSystem\EnemyFighter\FighterTerniaAdvisor.cs" />
+    <Compile Include="Simulation\FightSystem\Fighter.cs" />
+    <Compile Include="Simulation\FightSystem\FightSystem.cs" />
+    <Compile Include="Simulation\FightSystem\PlayerFighter.cs" />
+    <Compile Include="Simulation\ItemCard.cs" />
     <Compile Include="Simulation\Screens\AchievementScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,7 +84,7 @@
     <Compile Include="Simulation\Expression\NumToBoolBinaryOperator.cs" />
     <Compile Include="Simulation\Expression\NumToNumBinaryOperator.cs" />
     <Compile Include="Simulation\FightSystem\Item\ItemStoneCut.cs" />
-    <Compile Include="Simulation\FightSystem\PlayerStatus.cs" />
+    <Compile Include="Simulation\PlayerInventory.cs" />
     <Compile Include="Simulation\Screens\GameSimulationState.cs">
       <SubType>Form</SubType>
     </Compile>
