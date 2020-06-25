@@ -55,14 +55,14 @@ namespace theSpyCardEditor
         {
             // Todo
             bool nullMet = false;
-            bool first = false;
+            bool firstMet = false;
             EItemClass type = EItemClass.Null;
 
             foreach (string key in items.Keys)
             {
                 nullMet = nullMet || (items[key].Item.ItemClass == EItemClass.Null);
 
-                if (first)
+                if (firstMet)
                 {
                     if (!ItemFactory.SameArchtype(type, items[key].Item.ItemClass))
                     {
@@ -74,6 +74,7 @@ namespace theSpyCardEditor
                     if (items[key].Item.ItemClass != EItemClass.Null)
                     {
                         type = items[key].Item.ItemClass;
+                        firstMet = true;
                     }
                 }
             }
