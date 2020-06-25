@@ -12,19 +12,40 @@ namespace theSpyCardEditor
 
         PlayerInventory PI;
 
-        public PlayerFighter(PlayerInventory PI) : base()
+        public PlayerFighter(FightSystem FS, PlayerInventory PI) : base(FS)
         {
             this.PI = PI;
         }
 
-        public override string WitchAction()
+        public override string WhichAction()
         {
             return CurrentAction;
         }
 
-        public override string Action(string action)
+        public override void BeginFight()
         {
-            return "";
+           foreach(KeyValuePair<string, ItemCard> pair in PI.AllItems())
+           {
+                if (pair.Value.Item.HasPassif)
+                {
+
+                }
+           }
+        }
+
+        public override void StartTurn()
+        {
+          
+        }
+
+        public override void EndTurn()
+        {
+           
+        }
+
+        public override void InAction(string action)
+        {
+           
         }
     }
 }

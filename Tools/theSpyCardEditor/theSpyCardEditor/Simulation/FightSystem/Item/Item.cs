@@ -26,10 +26,10 @@ namespace theSpyCardEditor
 
         public abstract void BeginFight(Fighter enemy);
 
-        public abstract void BeginPassif(Fighter enemy);
+        public abstract void BeginTurn(Fighter enemy);
 
-        public abstract void PassifEachTurn(Fighter enemy);
+        public abstract void EndTurn(Fighter enemy);
 
-        public abstract void Action(Fighter enemy);
+        public abstract void InAction(Fighter enemy);
     }
 }

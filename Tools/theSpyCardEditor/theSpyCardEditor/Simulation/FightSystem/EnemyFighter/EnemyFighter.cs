@@ -8,6 +8,7 @@ namespace theSpyCardEditor
 {
     abstract class EnemyFighter : Fighter
     {
-        public new abstract void Init();
+        public EnemyFighter(FightSystem FS) : base(FS) { }
+        public abstract void InitParameters();
     }
 }

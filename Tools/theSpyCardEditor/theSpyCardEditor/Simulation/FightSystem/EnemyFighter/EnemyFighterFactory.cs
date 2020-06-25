@@ -11,6 +11,9 @@ namespace theSpyCardEditor
         private static Dictionary<string, EnemyFighter> enemies;
         public static Dictionary<string, EnemyFighter>.KeyCollection Keys => enemies.Keys;
 
+
+
+        // RETODO, degeulasse puisque charge trop de classe -> faire un switch
         public static void InitEnemyFighters()
         {
             enemies = new Dictionary<string, EnemyFighter>()
@@ -29,6 +32,7 @@ namespace theSpyCardEditor
             if (enemies.ContainsKey(name))
             {
                 enemies[name].Init();
+                enemies[name].InitParameters();
                 return enemies[name];
             }
 

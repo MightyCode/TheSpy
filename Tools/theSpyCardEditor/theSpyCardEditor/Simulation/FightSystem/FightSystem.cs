@@ -8,13 +8,42 @@ namespace theSpyCardEditor
 {
     class FightSystem
     {
-        Fighter player;
-        Fighter ia;
+        public Fighter Player;
+        public Fighter AI;
 
-        public FightSystem(Dictionary<string, int> parameters)
+        public Fighter Winner { get; set; } = null;
+
+        public FightSystem(Dictionary<string, int> parameters, PlayerInventory PI, string enemy)
         {
-            player = new Fighter(parameters.);
-            ia = new Fighter();
+            Player = new PlayerFighter(this, PI);
+            AI = EnemyFighterFactory.GetEnemy(enemy);
+
+            Player.BeginFight();
+            AI.BeginFight();
+        }
+
+        public void DoTurn()
+        {
+            Player.InitTurn();
+            AI.InitTurn();
+
+            Player.StartTurn();
+            AI.StartTurn();
+
+            string action1 = Player.WhichAction();
+            string action2 = AI.WhichAction();
+
+            if (Player.FightParameters["turnSpeed"] >= AI.FightParameters["turnSpeed"])
+            {
+                Player.InAction(action1);
+                if (AI.FightParameters["turnLife"])
+            } else
+            {
+
+            }
+
+            Player.EndTurn();
+            AI.InitTurn();
         }
     }
 }

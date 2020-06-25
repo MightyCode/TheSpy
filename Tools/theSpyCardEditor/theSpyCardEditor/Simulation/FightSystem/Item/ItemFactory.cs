@@ -21,6 +21,8 @@ namespace theSpyCardEditor
         private static Dictionary<String, Item> items = new Dictionary<string, Item>();
         public static Dictionary<string, Item>.KeyCollection Keys => items.Keys;
 
+        // RETODO, degeulasse puisque charge trop de classe -> faire un switch
+
         public static void InitItems()
         {
             items = new Dictionary<string, Item>()

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace theSpyCardEditor
 {
@@ -30,9 +26,12 @@ namespace theSpyCardEditor
 
         public Dictionary<string, int> FightParameters;
 
-        public Fighter()
+        FightSystem FS;
+
+        public Fighter(FightSystem FS)
         {
             Init();
+            this.FS = FS;
         }
 
         public void Init()
@@ -46,8 +45,21 @@ namespace theSpyCardEditor
             }
         }
 
-        public abstract string WitchAction();
+        public abstract string WhichAction();
 
-        public abstract string Action(string action);
+        public abstract void BeginFight();
+
+        public void InitTurn()
+        {
+            for (int i = 0; i < PARAMETERS.Length; ++i)
+            {
+                FightParameters["turn" + PARAMETERS[i]] = FightParameters["fight" + PARAMETERS[i]];
+            }
+        }
+
+        public abstract void StartTurn();
+        public abstract void EndTurn();
+
+        public abstract void InAction(string action);
     }
 }

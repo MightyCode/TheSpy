@@ -49,6 +49,8 @@ namespace theSpyCardEditor
             }
         }
 
+        public IEnumerable<KeyValuePair<string, ItemCard>> AllItems() => items.AsEnumerable();
+
         public ItemCard GetItem(string locationName) => items[locationName];
 
         private void CheckTypeStatus()

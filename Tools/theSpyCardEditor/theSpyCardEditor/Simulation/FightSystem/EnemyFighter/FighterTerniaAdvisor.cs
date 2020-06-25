@@ -10,30 +10,45 @@ namespace theSpyCardEditor
     {
         bool turn;
 
-        public FighterTerniaAdvisor() : base()
+        /*
+            One turn attack, one turn nothing
+        */ 
+
+        public FighterTerniaAdvisor(FightSystem FS) : base(FS)
         {
             turn = false;
 
             Init();
         }
 
-        public override void Init()
+        public override void InitParameters()
         {
-            ((Fighter)this).Init();
         }
 
-        public override string WitchAction()
+        public override string WhichAction()
         {
             turn = !turn;
             return (turn) ? ACTION_ATTACK: ACTION_NOTHING;
         }
 
-
-        public override string Action(string action)
+        public override void BeginFight()
         {
+            
+        }
 
+        public override void StartTurn()
+        {
+            
+        }
 
-            return "";
+        public override void EndTurn()
+        {
+           
+        }
+
+        public override void InAction(string action)
+        {
+            
         }
     }
 }
